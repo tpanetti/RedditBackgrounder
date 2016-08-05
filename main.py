@@ -30,4 +30,4 @@ for x in submissions:
         break;
     index += 1
 
-ctypes.windll.user32.SystemParametersInfoW(20, 0, path, 2)
+ctypes.windll.user32.SystemParametersInfoW(20, 0, path, 3)
