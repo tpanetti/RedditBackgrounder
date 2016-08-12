@@ -10,10 +10,10 @@ The default subreddit to look for is /r/spaceporn.
 Dependent on [Pillow](https://pypi.python.org/pypi/Pillow/) and [praw](https://pypi.python.org/pypi/praw). Install these dependencies with pip using `pip install Pillow` and `pip install praw`. After that, simply execute main.py and enjoy your new background!
 
 Can be ran two ways
-		'python main.py'
+		`python main.py`
 
 or to specify resolution
-		'python main.py 1920 1080'
+		`python main.py 1920 1080`
 
 This should work on older versions of Windows, but will not work on WindowsXP as the file is not converted to BMP format.
 
