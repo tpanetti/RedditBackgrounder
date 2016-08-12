@@ -9,23 +9,15 @@ The default subreddit to look for is /r/spaceporn.
 ### Usage:
 Dependent on [Pillow](https://pypi.python.org/pypi/Pillow/) and [praw](https://pypi.python.org/pypi/praw). Install these dependencies with pip using `pip install Pillow` and `pip install praw`. After that, simply execute main.py and enjoy your new background!
 
-Support for 32 bit can be added by changing
+Can be ran two ways
+		'python main.py'
 
-```python
-ctypes.windll.user32.SystemParametersInfoW(...)
-```
-
-to
-
-```python
-ctypes.windll.user32.SystemParametersInfoA(...)
-```
+or to specify resolution
+		'python main.py 1920 1080'
 
 This should work on older versions of Windows, but will not work on WindowsXP as the file is not converted to BMP format.
 
 ### To do:
-* Automatic detection of 32bit vs 64bit
 * Search after the default limit if no valid images are found
-* Add option to search for specific resolution. Closest resolution image will be selected
 * Save recently used images to ensure new ones are used when possible
 * Add documentation explaining how to make this an automatically run Windows task

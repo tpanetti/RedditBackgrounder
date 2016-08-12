@@ -4,16 +4,22 @@ import ctypes
 import requests
 import os
 import random
+import sys
 from PIL import Image
 from io import BytesIO
 
+#Grab arguments if resolution was specified in args
+if len(sys.argv) == 2:
+	minx = argv[0]
+	miny = argv[1]
+else:
+	minx = ctypes.windll.user32.GetSystemMetrics(0)
+	miny = ctypes.windll.user32.GetSystemMetrics(1)
 
 user_agent = 'reddit_background'
 subList = ['spaceporn', 'earthporn', 'CityPorn', 'wallpaper', 'EarthPorn', 'BeachPorn', 'SummerPorn', 'WinterPorn']
 subreddit = random.choice(subList)
 #Grab screen resolution
-minx = ctypes.windll.user32.GetSystemMetrics(0)
-miny = ctypes.windll.user32.GetSystemMetrics(1)
 
 path = r""
 
