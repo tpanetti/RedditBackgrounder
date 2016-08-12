@@ -7,17 +7,19 @@ import random
 from PIL import Image
 from io import BytesIO
 
+
 user_agent = 'reddit_background'
 subList = ['spaceporn', 'earthporn', 'CityPorn', 'wallpaper', 'EarthPorn', 'BeachPorn', 'SummerPorn', 'WinterPorn']
 subreddit = random.choice(subList)
-minx = 2560
-miny = 1440
+#Grab screen resolution
+minx = ctypes.windll.user32.GetSystemMetrics(0)
+miny = ctypes.windll.user32.GetSystemMetrics(1)
 
 path = r""
 
 r = praw.Reddit(user_agent=user_agent);
 submissions = r.get_subreddit(subreddit).get_hot()
-index = 0;
+#index = 0; #<- I don't know what this does
 for x in submissions:
     r = requests.get(x.url)
     try:
@@ -30,7 +32,7 @@ for x in submissions:
         path = os.getcwd() + r'\image'
         print(path);
         break;
-    index += 1
+    #index += 1
 
 
 #Check architecture before assigning image to background
