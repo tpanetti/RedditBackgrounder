@@ -3,11 +3,13 @@ import praw
 import ctypes
 import requests
 import os
+import random
 from PIL import Image
 from io import BytesIO
 
 user_agent = 'reddit_background'
-subreddit = 'spaceporn'
+subList = ['spaceporn', 'earthporn', 'CityPorn', 'wallpaper', 'EarthPorn', 'BeachPorn', 'SummerPorn', 'WinterPorn']
+subreddit = random.choice(subList)
 minx = 2560
 miny = 1440
 
