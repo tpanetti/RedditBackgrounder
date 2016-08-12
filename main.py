@@ -30,4 +30,11 @@ for x in submissions:
         break;
     index += 1
 
-ctypes.windll.user32.SystemParametersInfoW(20, 0, path, 3)
+
+#Check architecture before assigning image to background
+try:	#64-bit
+	os.environ["PROGRAMFILES(X86)"]
+	ctypes.windll.user32.SystemParametersInfoW(20, 0, path, 3)
+except:	#32-bit
+	ctypes.windll.user32.SystemParametersInfoA(20, 0, path, 3)
+
