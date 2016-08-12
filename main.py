@@ -12,20 +12,20 @@ from io import BytesIO
 if len(sys.argv) == 2:
 	minx = argv[0]
 	miny = argv[1]
-else:
+else:#Else grab screen resolution
 	minx = ctypes.windll.user32.GetSystemMetrics(0)
 	miny = ctypes.windll.user32.GetSystemMetrics(1)
 
 user_agent = 'reddit_background'
 subList = ['spaceporn', 'earthporn', 'CityPorn', 'wallpaper', 'EarthPorn', 'BeachPorn', 'SummerPorn', 'WinterPorn']
 subreddit = random.choice(subList)
-#Grab screen resolution
+
 
 path = r""
 
 r = praw.Reddit(user_agent=user_agent);
 submissions = r.get_subreddit(subreddit).get_hot()
-#index = 0; #<- I don't know what this does
+index = 0;
 for x in submissions:
     r = requests.get(x.url)
     try:
@@ -38,7 +38,7 @@ for x in submissions:
         path = os.getcwd() + r'\image'
         print(path);
         break;
-    #index += 1
+    index += 1
 
 
 #Check architecture before assigning image to background
